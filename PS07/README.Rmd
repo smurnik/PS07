@@ -1,0 +1,47 @@
+---
+title: "Smith College Mountain Neighbmorhood"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(
+  message = FALSE, warning = FALSE, fig.width = 16/2, fig.height = 9/2
+)
+```
+
+## GitHub Documents
+
+This is an R Markdown format used for publishing markdown documents to GitHub. When you click the **Knit** button all R code chunks are run and a markdown file (.md) suitable for publishing to GitHub is generated.
+
+## Including Code
+
+You can include R code in the document as follows:
+
+```{r cars}
+library(tidyverse)
+library(fivethirtyeight)
+library(leaflet)
+library(sf)
+library(maps)
+library(tidycensus)
+library(tmaptools)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+House <- c('Cutter','Ziskind','Capen','Gillett','Lamont','Talbot','Nothrop')
+Residents <- c('76','77','73','80','83','80','80')
+MOUNTAIN_NEIGHBORHOOD <- data.frame(House, Residents)
+
+
+ggplot(data=MOUNTAIN_NEIGHBORHOOD, mapping=aes(x=House, y=Residents))+
+  geom_col()
+
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
